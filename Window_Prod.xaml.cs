@@ -25,13 +25,7 @@ namespace WpfApp10_Shop
         {
             InitializeComponent();
             this.selectedRow = myObject;
-            //tbFame.Text = selectedRow.Fname.ToString();
-            //tbMame.Text = selectedRow.Mname.ToString();
-            //tbLame.Text = selectedRow.Lname.ToString();
-            //tbPost.Text = selectedRow.Post.ToString();
-            //tbSalary.Text = selectedRow.Salary.ToString();
-            //tbPSalary.Text = selectedRow.PriorSalary.ToString();
-            //tbPhone.Text = selectedRow.Phone.ToString();
+            
 
 
 
