@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp10_Shop.Window_Prod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10_Shop"
+        mc:Ignorable="d"
+        Title="Window_Prod" Height="200" Width="1200" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="tbFame" Text="Фамилия" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbMame" Text="Имя" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbLame" Text="Отчество" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbPost" Text="Должность" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbSalary" Text="Зарплата" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbPSalary" Text="Премия" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbPhone" Text="Телефон" Width="100" Margin="5,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button x:Name="btnCreate" Width="100" Margin="5,0" Content=" Создать" Click="btnCreate_Click"/>
+                <Button x:Name="btnUpdate" Width="100" Margin="5,0" Content=" Изменить" Click="btnUpdate_Click"/>
+                <Button x:Name="btnDelete" Width="100" Margin="5,0" Content=" Удалить" Click="btnDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
