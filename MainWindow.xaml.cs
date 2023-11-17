@@ -30,9 +30,8 @@ namespace WpfApp10_Shop
             {
                 "1.Покупатели",
                 "2.Сотрудники",
-                "3.Продукция",
-                "4.Склад",
-                "5.Покупки"
+                "3.Продукция",                
+                "4.Покупки"
             };
             myListBox.ItemsSource = data;
         }
@@ -88,6 +87,22 @@ namespace WpfApp10_Shop
                         }
                         break;
                     }
+                case 2:
+                    {
+                        var selectedRow = dataGrid1.SelectedItem as Product;
+                        if (selectedRow != null)
+                        {
+                            Window_Prod mw = new Window_Prod(selectedRow);
+                            mw.ShowDialog();
+                            using (InternetShopDbContext db = new InternetShopDbContext())
+                            {
+                                var temp = db.Products.ToList();
+                                dataGrid1.ItemsSource = temp;
+                            }
+                        }
+                    }
+                     break;
+                    
                 default:
                     break;
             }
@@ -95,7 +110,8 @@ namespace WpfApp10_Shop
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-
+            Window1_Shop mw = new Window1_Shop();
+            mw.ShowDialog();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)

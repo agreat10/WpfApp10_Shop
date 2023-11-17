@@ -9,13 +9,11 @@
     <Grid>
         <StackPanel Margin="10">
             <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBox x:Name="tbFame" Text="Фамилия" Width="100" Margin="5,0"/>
-                <TextBox x:Name="tbMame" Text="Имя" Width="100" Margin="5,0"/>
-                <TextBox x:Name="tbLame" Text="Отчество" Width="100" Margin="5,0"/>
-                <TextBox x:Name="tbPost" Text="Должность" Width="100" Margin="5,0"/>
-                <TextBox x:Name="tbSalary" Text="Зарплата" Width="100" Margin="5,0"/>
-                <TextBox x:Name="tbPSalary" Text="Премия" Width="100" Margin="5,0"/>
-                <TextBox x:Name="tbPhone" Text="Телефон" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbName" Text="Название" Width="100" Margin="5,0"/>                
+                <TextBox x:Name="tbColor" Text="Цвет" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbDescr" Text="Описание" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbPrice" Text="Стоимость" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbQty" Text="Количество" Width="100" Margin="5,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10">
                 <Button x:Name="btnCreate" Width="100" Margin="5,0" Content=" Создать" Click="btnCreate_Click"/>

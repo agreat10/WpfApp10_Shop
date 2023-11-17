@@ -1,0 +1,91 @@
+﻿<Window x:Class="WpfApp10_Shop.Window1_Shop"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10_Shop"
+        mc:Ignorable="d"
+        Title="Window1_Shop" Height="450" Width="1200">
+    <Grid>
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="tbFname" Text="Имя" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbMname" Text="Отчество" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbLname" Text="Фамилия" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbCity" Text="Адрес" Width="100" Margin="5,0"/>
+                <TextBox x:Name="tbPhone" Text="Телефон" Width="100" Margin="5,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button x:Name="btnCreate" Width="100" Margin="5,0" Content=" Создать" />
+                <Button x:Name="btnUpdate" Width="100" Margin="5,0" Content=" Изменить" />
+                <Button x:Name="btnDelete" Width="100" Margin="5,0" Content=" Удалить" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Width="900">
+
+                <!-- #region DataGrid для витрины -->
+                <DataGrid x:Name="dataGrid" FontSize="18" AutoGenerateColumns="False" Margin="5" 
+                                      SelectionMode="Single"                                       
+                                      SelectionChanged="dataGrid_SelectionChanged"
+                                       ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                                  Width="450" Height="350">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название" Binding="{Binding Name}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Qty}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Price}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <!-- #endregion -->
+
+                <!-- #region Кнопки вверх и вниз -->
+                <StackPanel Margin="10" IsEnabled ="True" x:Name="SPNumeric">
+                    <Button VerticalAlignment="Center" Width="30" Height="30" x:Name="BtnUP" 
+                                        FontSize="18" Margin="10,120,10,10" Content="▲" Click="BtnUP_Click" />
+
+
+                    <TextBlock Text="0"
+                                           FontSize="18"
+                                           VerticalAlignment="Center"
+                                           Width="50" 
+                                           x:Name="numericUpDown" 
+                                           Background="FloralWhite"
+                                           FlowDirection="RightToLeft"
+                                           Padding="5,0"
+                                           Foreground="#2B1371"
+                                           />
+
+
+                    <Button VerticalAlignment="Center" 
+                                        Width="30" 
+                                        Height="30" 
+                                        x:Name="BtnDown" 
+                                        FontSize="18" 
+                                        Margin="10,10,10,2" 
+                                        Content="▼" 
+                                        Click="BtnDOWN_Click"
+                                        />
+                </StackPanel>
+                <!-- #endregion -->
+
+                <!-- #region DataGrid1 купленных товаров -->
+                <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False"
+                                          Margin="5" FontSize="18" SelectionMode="Single"
+                                          IsReadOnly="True"
+                                          ItemsSource="{Binding saleproducts}"
+                                          SelectedItem="{Binding SaleSelectedProduct}"
+                                          SelectionChanged="dataGrid1_SelectionChanged"
+                                           Width="400" Height="350"
+                                  VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Qty}" />
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
+                        <DataGridTextColumn Header="Сумма" Binding="{Binding AllPrice}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <!-- #endregion -->
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
